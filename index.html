@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title> Henry VIII Trivia Game </title>
+</head>
+<body>
+
+    <h1> Henry VIII Trivia Game </h1>
+
+        <div id="triviaQuestions"></div>
+        <div id="triviaQuestions2"></div>
+
+    <script>
+
+        //declare variables
+        var correctAnswers=0;
+        var incorrectAnswers=0;
+        var timer=0;
+    
+
+
+        //make questions (object??)
+
+        var questions = [
+           {
+            question: "What house did Henry VIII belong to?",
+            answers: ["Lannister", "Windsor", "Tudor", "Hanover",],
+            correct: "Tudor",
+        },
+        {
+            question: "How many wives did Henry VIII have?",
+            answers: ["Four", "Five", "Six", "Eight",],
+            correct: "Six",
+        },
+        {
+            question: "Henry VIII's older brother tragically died in 1503 at the age of 15. What was his name? ",
+            answers: ["Arthur", "Edward", "Henry", "Charles",],
+            correct: "Arthur",
+        },
+    {
+        question: "Who was Henry VIII's first wife?",
+            answers: ["Anne Boleyn", "Jane Seymour", "Catherine of Aragon", "Catherine Howard", ],
+            correct: "Catherine of Aragon",
+        },
+    {
+        question: "What happened to  Henry VIII's wife Anne Boleyn?",
+            answers: ["Widowed", "Beheaded", "Divorced", "Died of Natural Causes",],
+            correct: "Beheaded"
+        },
+    
+    ]
+
+
+
+
+        
+    // var questionsText=""
+    // var answersText=""
+    
+      // var displayAnswers=questions[i].answers;
+            // answersText=answersText + displayAnswers;
+
+  
+
+   
+
+
+
+
+//         for (var i=0; i<questions.length; i++) {
+//             $("#triviaQuestions").text(questions[i].question)
+//             $("#triviaQuestions2").text(questions[i].answers)
+//             console.log(questions[i].answers)
+//             console.log(questions[i].question)
+//         }
+//     
+
+
+    // console.log(questions[0].question) 
+    // console.log(questions[0].answers)  
+    
+  
+   
+
+
+            //radio button?
+
+
+    //create start button
+        
+        //set timeout function (set interval if doing option 2)
+
+        //show questions with answers
+    var triviaDiv=$("#triviaQuestions");
+    for (var i=0; i<questions.length; i++) {
+    var newTriviaDiv=$("<div>" + questions[i].question + "</div>");
+    var newAnswersDiv=$("<div>" + questions[i].answers + "</div>");
+    triviaDiv.append(newTriviaDiv);
+    triviaDiv.append(newAnswersDiv);
+    }
+
+        //allow user to click on question
+
+        //sumbit button
+
+
+        
+        </script>
+
+
+
+
+</body>
+</html>
