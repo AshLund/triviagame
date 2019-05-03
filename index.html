@@ -53,20 +53,46 @@
     {
         question: "What happened to  Henry VIII's wife Anne Boleyn?",
             answers: ["Widowed", "Beheaded", "Divorced", "Died of Natural Causes",],
-            correct: "Beheaded"
+            correct: "Beheaded",
         },
-    
+    {
+        question: "Which wife is Harry VIII buried next to?",
+            answers: ["Anne Boleyn", "Jane Seymour", "Catherine of Aragon", "Anne of Cleves", ],
+            correct: "Jane Seymour",
+        },
+
     ]
 
 var count=0;
 var showTrivia=""
+var number=10;
 
 
 $("#start").click(startGame);
 
-        
-    // var questionsText=""
-    // var answersText=""
+$("#triviaQuestions2").on("click", function (event) {
+    runGame ();
+    event.preventDefault();
+    console.log(event.target)
+    // var guess = $('#trviaQuestions2').val()
+    if ($(this)===questions[count].correct) {
+        console.log(questios[count].correctAnswers)
+        console.log($(this))
+        correctAnswers++
+        console.log(correctAnswers)
+    } else {
+        incorrectAnswers++
+        console.log(incorrectAnswers)
+    }
+    //user guess is correct guess
+    //run game?
+}
+
+)
+
+
+
+
     
       // var displayAnswers=questions[i].answers;
             // answersText=answersText + displayAnswers;
@@ -105,7 +131,7 @@ $("#start").click(startGame);
 
 function displayAnswers() {
     var triviaDiv=$("#triviaQuestions2");
-    var newAnswersDiv=$("<div>" + questions[count].answers + "</div>");
+    var newAnswersDiv=$("<button>" + questions[count].answers.join("<button>") + "</button>");
     triviaDiv.html(newAnswersDiv);
     }
 
@@ -119,20 +145,23 @@ function displayQuestion() {
 // displayAnswers();
 
 function runGame () {
-    showTrivia = setInterval(10000);
+    showTrivia = setInterval(runGame, 10000);
+    console.log(setInterval)
     displayQuestion();
     displayAnswers();
     count++;
 
   }
 
+  function clearTimer () {
+      clearInterval(showTrivia)
+  }
+
+  
+
 
 function startGame () {
-    displayQuestion();
-    displayAnswers();
-    showTrivia = setInterval(runGame, 10000);
-    $("#timer").append(setInterval)
-
+    runGame();
 }
 
 //   function nextQuestion () {
