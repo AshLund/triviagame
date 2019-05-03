@@ -11,8 +11,12 @@
 
     <h1> Henry VIII Trivia Game </h1>
 
-        <div id="triviaQuestions"></div>
+    <div id="timer"></div>    
+    <div id="triviaQuestions"></div>
+    <br>
         <div id="triviaQuestions2"></div>
+        <br>
+    <button id="start"> Start Game </button>
 
     <script>
 
@@ -54,8 +58,11 @@
     
     ]
 
+var count=0;
+var showTrivia=""
 
 
+$("#start").click(startGame);
 
         
     // var questionsText=""
@@ -85,23 +92,56 @@
     
   
    
-
+    // for (var i=0; i<questions.length; i++) {
 
             //radio button?
 
 
     //create start button
-        
+
         //set timeout function (set interval if doing option 2)
 
         //show questions with answers
-    var triviaDiv=$("#triviaQuestions");
-    for (var i=0; i<questions.length; i++) {
-    var newTriviaDiv=$("<div>" + questions[i].question + "</div>");
-    var newAnswersDiv=$("<div>" + questions[i].answers + "</div>");
-    triviaDiv.append(newTriviaDiv);
-    triviaDiv.append(newAnswersDiv);
+
+function displayAnswers() {
+    var triviaDiv=$("#triviaQuestions2");
+    var newAnswersDiv=$("<div>" + questions[count].answers + "</div>");
+    triviaDiv.html(newAnswersDiv);
     }
+
+function displayQuestion() {
+    var triviaDiv=$("#triviaQuestions");
+    var newTriviaDiv=$("<div>" + questions[count].question + "</div>");
+    triviaDiv.html(newTriviaDiv);
+}
+
+// displayQuestion();
+// displayAnswers();
+
+function runGame () {
+    showTrivia = setInterval(10000);
+    displayQuestion();
+    displayAnswers();
+    count++;
+
+  }
+
+
+function startGame () {
+    displayQuestion();
+    displayAnswers();
+    showTrivia = setInterval(runGame, 10000);
+    $("#timer").append(setInterval)
+
+}
+
+//   function nextQuestion () {
+//     showTrivia = setInterval(3000);
+//     displayQuestion();
+//     displayAnswers();
+//     count++;
+//   }
+
 
         //allow user to click on question
 
