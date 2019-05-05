@@ -23,16 +23,12 @@
     <button id="start"> Start Game </button>
 
     <script>
-
         //declare variables
         var correctAnswers=0;
         var incorrectAnswers=0;
         var timer=0;
     
-
-
         //make questions (object??)
-
         var questions = [
            {
             question: "What house did Henry VIII belong to?",
@@ -64,25 +60,25 @@
             answers: ["Anne Boleyn", "Jane Seymour", "Catherine of Aragon", "Anne of Cleves", ],
             correct: "Jane Seymour",
         },
-
     ]
-
 var count=0;
 var showTrivia=""
 var number=10;
-
-
-
-
 $("#start").click(startGame);
    
-
 function startGame () {
     $(this).hide();
     $("#correct").text("Number Correct: ")
+    showTrivia = setInterval(decrement, 1000);
+    function decrement() {
+    number--;
+    $("#timer").html("<h2>" + number + "</h2>");
+    if (number===0) {
+        stop2()
+    }
+    }
     runGame();
 }
-
 $("#triviaQuestions2").on("click", function (event) {
     runGame ();
     event.preventDefault();
@@ -102,9 +98,16 @@ $("#triviaQuestions2").on("click", function (event) {
         console.log(count)
         console.log(questions.length)
     }
-  
-
+    clearInterval(showTrivia);
+    showTrivia = setInterval(decrement, 1000);
+    function decrement() {
+    number--;
+    $("#timer").html("<h2>" + number + "</h2>");
+    if (number===0) {
+        stop2();
     }
+    }
+}
 // }
 // }
 //     if (count === questions.length) {
@@ -113,23 +116,12 @@ $("#triviaQuestions2").on("click", function (event) {
 //     }
  
     //user guess i
-
 })
-
-
-
-
     
       // var displayAnswers=questions[i].answers;
             // answersText=answersText + displayAnswers;
-
   
-
    
-
-
-
-
 //         for (var i=0; i<questions.length; i++) {
 //             $("#triviaQuestions").text(questions[i].question)
 //             $("#triviaQuestions2").text(questions[i].answers)
@@ -137,46 +129,34 @@ $("#triviaQuestions2").on("click", function (event) {
 //             console.log(questions[i].question)
 //         }
 //     
-
-
     // console.log(questions[0].question) 
     
     
   
    
     // for (var i=0; i<questions.length; i++) {
-
             //radio button?
-
-
     //create start button
-
         //set timeout function (set interval if doing option 2)
-
         //show questions with answers
-
 function displayAnswers() {
     var triviaDiv=$("#triviaQuestions2");
     var newAnswersDiv=$("<button>" + questions[count].answers.join("<button>") + "</button>");
     triviaDiv.html(newAnswersDiv);
     }
-
 function displayQuestion() {
     var triviaDiv=$("#triviaQuestions");
     var newTriviaDiv=$("<div>" + questions[count].question + "</div>");
     triviaDiv.html(newTriviaDiv);
 }
-
 function displayAnswer() {
     var triviaDiv=$("#answers");
    var newAnswerDiv=$("<div>" + questions[count].correct + "</div>");
    console.log(newAnswerDiv)
     triviaDiv.html(newAnswerDiv);
 }
-
 // displayQuestion();
 // displayAnswers();
-
 function runGame () {
     showTrivia = setInterval(10000);
     console.log(setInterval)
@@ -185,28 +165,20 @@ function runGame () {
     count=count + 1;
   
   }
-
-
   function stop () {
     clearInterval(showTrivia)
     $("#thanks").html("Game Over! Thank you for playing!")
     $("#triviaQuestions").empty();
     $("#triviaQuestions2").empty();
-
-
     }
   
-
-
-//   function clearTimer () {
-//       clearInterval(showTrivia)
-//   }
-
-  
-
-
-
-
+function stop2 () {
+    clearInterval(showTrivia)
+    displayQuestion();
+    displayAnswers();
+    number=10;
+    count++;
+}
 
 //   function nextQuestion () {
 //     showTrivia = setInterval(3000);
@@ -214,13 +186,8 @@ function runGame () {
 //     displayAnswers();
 //     count++;
 //   }
-
-
         //allow user to click on question
-
         //sumbit button
-
-
         
         </script>
 
