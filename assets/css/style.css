@@ -1,0 +1,91 @@
+h1 {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 55px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    background-color: darkred;
+    margin-top: -20px;
+    padding: 20px;
+}
+
+#henry {
+    float: right;
+    padding-right: 100px;
+    padding: 25px;
+    border-color: goldenrod;
+}
+
+
+header {
+    position: relative;
+}
+
+body {
+    background-color: darkred;
+}
+
+hr {
+    border-color: goldenrod;
+    width: 100%;
+    display: block;
+    border-width: 1px;
+    border-style: insert;
+}
+
+button.#start {
+    background-color: goldenrod;
+    color: white;
+    border-color: white;
+    padding: 50px;
+}
+
+
+button {
+background-color: goldenrod;
+    color: white;
+    border-color: white;
+    height: 40px;
+    width: 450px;
+    margin: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+#timer {
+    color:white;
+}
+
+#thanks {
+    color: white;
+    font-size: 18px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#triviaQuestions {
+    color: white;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#correct {
+    color: white;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+
+footer {
+    width: 100%;
+    background-color:goldenrod;
+    height: 100px;
+    line-height:50px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+
+#footer {
+    display: inline-block;
+}
