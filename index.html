@@ -11,6 +11,7 @@
 
     <h1> Henry VIII Trivia Game </h1>
 
+    <div id="thanks"></div>
     <div id="timer"></div>    
     <div id="correct"></div>
     <div id="triviaQuestions"></div>
@@ -59,7 +60,7 @@
             correct: "Beheaded",
         },
     {
-        question: "Which wife is Harry VIII buried next to?",
+        question: "Which wife is Henry VIII buried next to?",
             answers: ["Anne Boleyn", "Jane Seymour", "Catherine of Aragon", "Anne of Cleves", ],
             correct: "Jane Seymour",
         },
@@ -78,7 +79,7 @@ $("#start").click(startGame);
 
 function startGame () {
     $(this).hide();
-    $("#correct").text("Number Correct:")
+    $("#correct").text("Number Correct: ")
     runGame();
 }
 
@@ -86,7 +87,6 @@ $("#triviaQuestions2").on("click", function (event) {
     runGame ();
     event.preventDefault();
     console.log(event.target)
-    // var userGuess=$(this).val();
     var userGuess=event.target.textContent
     // // var userGuess = $('#trviaQuestions2').val();
     console.log(userGuess)
@@ -95,9 +95,14 @@ $("#triviaQuestions2").on("click", function (event) {
         console.log(questions[i].correct);
         correctAnswers=correctAnswers+1;
         console.log(correctAnswers)
-        $("#correct").html("Number Correct:"+  + correctAnswers)
+        $("#correct").html("Number Correct: "+  + correctAnswers)
     } 
-
+    if (count===questions.length) {
+        stop ();
+        console.log(count)
+        console.log(questions.length)
+    }
+  
 
     }
 // }
@@ -173,17 +178,24 @@ function displayAnswer() {
 // displayAnswers();
 
 function runGame () {
-    showTrivia = setInterval(runGame, 10000);
+    showTrivia = setInterval(10000);
     console.log(setInterval)
     displayQuestion();
     displayAnswers();
-    count++;
-    if (count === questions.length) {
-    clearInterval(showTrivia)
-    
-    }
+    count=count + 1;
+  
   }
 
+
+  function stop () {
+    clearInterval(showTrivia)
+    $("#thanks").html("Game Over! Thank you for playing!")
+    $("#triviaQuestions").empty();
+    $("#triviaQuestions2").empty();
+
+
+    }
+  
 
 
 //   function clearTimer () {
