@@ -99,7 +99,8 @@ $("#triviaQuestions2").on("click", function (event) {
         console.log(questions.length)
     }
     clearInterval(showTrivia);
-    showTrivia = setInterval(decrement, 1000);
+    showTrivia = setInterval(decrement, 10000);
+    number=10;
     function decrement() {
     number--;
     $("#timer").html("<h2>" + number + "</h2>");
@@ -179,7 +180,6 @@ function stop2 () {
     number=10;
     count++;
 }
-
 //   function nextQuestion () {
 //     showTrivia = setInterval(3000);
 //     displayQuestion();
@@ -193,6 +193,3 @@ function stop2 () {
 
 
 
-
-</body>
-</html>
