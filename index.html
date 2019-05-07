@@ -48,7 +48,7 @@
     
         //make questions (object??)
         var questions = [
-           {
+        {
             question: "What house did Henry VIII belong to?",
             answers: ["Lannister", "Windsor", "Tudor", "Hanover",],
             correct: "Tudor",
@@ -79,6 +79,7 @@
             correct: "Jane Seymour",
         },
     ]
+
 var count=0;
 var showTrivia=""
 var number=10;
@@ -103,7 +104,6 @@ $("#triviaQuestions2").on("click", function (event) {
     event.preventDefault();
     console.log(event.target)
     var userGuess=event.target.textContent
-    // // var userGuess = $('#trviaQuestions2').val();
     console.log(userGuess)
     for (var i =0; i< questions.length; i++) {
         if (userGuess===questions[i].correct) {
@@ -111,7 +111,10 @@ $("#triviaQuestions2").on("click", function (event) {
         correctAnswers=correctAnswers+1;
         console.log(correctAnswers)
         $("#correct").html("Number Correct: "+  + correctAnswers)
-    } 
+    }
+    
+
+
 }
     if (count===questions.length) {
         stop ();
@@ -160,29 +163,29 @@ function runGame () {
     $("#triviaQuestions").empty();
     $("#triviaQuestions2").empty();
     var playDiv=$("#play-again")
-    var playButton=$("<button>" + "Play Again" + "</button>")
+    var playButton=$("<button class='click'>" + "Play Again" + "</button>")
     playDiv.html(playButton)
     }
 
 
-    $("#play-again").on("click"), function (event) {
-    // count=0;
-    // $(this).hide();
-    // $("#correct").text("Number Correct: ")
-    // showTrivia = setInterval(decrement, 1000);
-    // function decrement() {
-    // number--;
-    // $("#timer").html("<h2>" + number + "</h2>");
-    // if (number===0) {
-    //     stop2()
-    // }
-    // }
-    // showTrivia = setInterval(10000);
-    // console.log(setInterval)
-    // displayQuestion();
-    // displayAnswers();
-    // count=count + 1;
-}
+    $(document).on("click", '.click', function () {
+    count=0;
+    $(this).hide();
+    $("#correct").text("Number Correct: ")
+    showTrivia = setInterval(decrement, 1000);
+    function decrement() {
+    number--;
+    $("#timer").html("<h2>" + number + "</h2>");
+    if (number===0) {
+        stop2()
+    }
+    }
+    showTrivia = setInterval(10000);
+    console.log(setInterval)
+    displayQuestion();
+    displayAnswers();
+    count=count + 1;
+})
    
   
 function stop2 () {
