@@ -68,9 +68,16 @@ background-color: goldenrod;
     color: white;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 18px;
+    font-weight: bold;
 }
 
 #correct {
+    color: white;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#incorrect {
     color: white;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 15px;
@@ -81,7 +88,7 @@ footer {
     width: 100%;
     background-color:goldenrod;
     height: 100px;
-    line-height:50px;
+    line-height:35px;
     position: fixed;
     bottom: 0;
     text-align: center;

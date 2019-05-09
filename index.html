@@ -25,6 +25,7 @@
     <div id="thanks"></div>
     <div id="timer"></div>    
     <div id="correct"></div>
+    <div id="incorrect"></div>
     <div id="triviaQuestions"></div>
     <br>
         <div id="triviaQuestions2"></div>
@@ -49,6 +50,12 @@
     
         //make questions (object??)
         var questions = [
+        {
+            question: "What year was Henry VIII born?",
+            answers: ["1400", "1421", "1491", "1501"],
+            correct: "1421"
+        },
+
         {
             question: "What house did Henry VIII belong to?",
             answers: ["Lannister", "Windsor", "Tudor", "Hanover",],
@@ -80,13 +87,14 @@
             correct: "Jane Seymour",
         },
     ]
-var count=0;
+var count=1;
 var showTrivia=""
 var number=10;
 $("#start").click(startGame);
 function startGame () {
     $(this).hide();
     $("#correct").text("Number Correct: ")
+    $("#incorrect").text("Number Incorrect: ")
     showTrivia = setInterval(decrement, 1000);
     function decrement() {
     number--;
@@ -114,7 +122,9 @@ $("#triviaQuestions2").on("click", function (event) {
         correctAnswers=correctAnswers+1;
         console.log(correctAnswers)
         $("#correct").html("Number Correct: "+  + correctAnswers)
-    }
+    }else
+        incorrectAnswers=incorrectAnswers+1;
+        $("#incorrect").html("Number Incorrect: " + + incorrectAnswers)
     
     if (count===questions.length) {
         stop ();
