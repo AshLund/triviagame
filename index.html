@@ -45,6 +45,7 @@
         var correctAnswers=0;
         var incorrectAnswers=0;
         var timer=0;
+      
     
         //make questions (object??)
         var questions = [
@@ -99,7 +100,6 @@ function startGame () {
         console.log(count)
         console.log(questions.length)
   }
-
     runGame();
 }
 $("#triviaQuestions2").on("click", function (event) {
@@ -108,15 +108,14 @@ $("#triviaQuestions2").on("click", function (event) {
     console.log(event.target)
     var userGuess=event.target.textContent
     console.log(userGuess)
-    for (var i =0; i< questions.length; i++) {
-        if (userGuess===questions[i].correct) {
-        console.log(questions[i].correct);
+    var countMinus=questions[count-2].correct
+    console.log(countMinus)
+        if (userGuess===countMinus) {
         correctAnswers=correctAnswers+1;
         console.log(correctAnswers)
         $("#correct").html("Number Correct: "+  + correctAnswers)
     }
     
-}
     if (count===questions.length) {
         stop ();
         console.log(count)
@@ -172,8 +171,6 @@ function runGame () {
     var playButton=$("<button class='click'>" + "Play Again" + "</button>")
     playDiv.html(playButton)
     }
-
-
     $(document).on("click", '.click', function () {
     count=0;
     correctAnswers=0;
@@ -192,9 +189,7 @@ function runGame () {
     console.log(event.target)
     var userGuess=event.target.textContent
     console.log(userGuess)
-    for (var i =0; i< questions.length; i++) {
-        if (userGuess===questions[i].correct) {
-        console.log(questions[i].correct);
+        if (userGuess===countMinus) {
         correctAnswers=correctAnswers+1;
         console.log(correctAnswers)
         $("#correct").html("Number Correct: "+  + correctAnswers)
@@ -203,7 +198,6 @@ function runGame () {
         stop ();
         console.log(count)
         console.log(questions.length)
-    }
     }
 })
    
