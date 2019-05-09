@@ -193,48 +193,20 @@ function runGame () {
     number=10;
     $("#correct").text("Number Correct: ")
     $("#incorrect").text("Number Incorrect: ")
-    showTrivia = setInterval(decrement, 1000);
-    function decrement() {
-    number--;
-    $("#timer").html("Time Left: " + number);
-    if (number===0) {
-        stop2()
-    }
-    }
+    // showTrivia = setInterval(decrement, 10000);
+    // function decrement() {
+    // number--;
+    // $("#timer").html("Time Left: " + number);
+    // if (number===0) {
+    //     stop2()
+    // }
+    // }
     if (count===questions.length) {
         stop ();
         console.log(count)
         console.log(questions.length)
   }
     runGame();
-    event.preventDefault();
-    console.log(event.target)
-    var userGuess=event.target.textContent
-    console.log(userGuess)
-    var countMinus=questions[count-2].correct
-    console.log(countMinus)
-        if (userGuess===countMinus) {
-        correctAnswers=correctAnswers+1;
-        console.log(correctAnswers)
-        $("#correct").html("Number Correct: "+  + correctAnswers)
-    }else
-        incorrectAnswers=incorrectAnswers+1;
-        $("#incorrect").html("Number Incorrect: " + + incorrectAnswers)
-    
-    if (count===questions.length) {
-        stop ();
-        console.log(count)
-        console.log(questions.length)
-    }
-    clearInterval(showTrivia);
-    showTrivia = setInterval(decrement, 10000);
-    number=10;
-    function decrement() {
-    number--;
-    if (number===0) {
-        stop2();
-    }
-    }
 })
    
   
