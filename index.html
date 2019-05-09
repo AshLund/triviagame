@@ -86,7 +86,8 @@
             correct: "Jane Seymour",
         },
     ]
-var count=1;
+var count=0;
+var plus=count + 1
 var showTrivia=""
 var number=10;
 $("#start").click(startGame);
@@ -176,10 +177,13 @@ function runGame () {
     $("#thanks").html("Game Over! Thank you for playing!")
     $("#triviaQuestions").empty();
     $("#triviaQuestions2").empty();
+    $("#timer").empty();
     var playDiv=$("#play-again")
     var playButton=$("<button class='click'>" + "Play Again" + "</button>")
     playDiv.html(playButton)
     }
+
+
     $(document).on("click", '.click', function () {
     count=0;
     correctAnswers=0;
@@ -219,6 +223,13 @@ function stop2 () {
     displayAnswers();
     number=10;
     count++;
+    if (count===questions.length) {
+        stop ();
+        clearInterval(showTrivia)
+        console.log(count)
+        console.log(questions.length)
+    }
+    
 }
      
         </script>
