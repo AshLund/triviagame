@@ -55,7 +55,6 @@
             answers: ["1400", "1421", "1491", "1501"],
             correct: "1421"
         },
-
         {
             question: "What house did Henry VIII belong to?",
             answers: ["Lannister", "Windsor", "Tudor", "Hanover",],
@@ -214,6 +213,8 @@ function runGame () {
   
 function stop2 () {
     clearInterval(showTrivia)
+    incorrectAnswers=incorrectAnswers+1;
+    $("#incorrect").html("Number Incorrect: " + + incorrectAnswers)
     displayQuestion();
     displayAnswers();
     number=10;
