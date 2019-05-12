@@ -111,6 +111,7 @@ function startGame () {
   }
     runGame();
 }
+
 $("#triviaQuestions2").on("click", function (event) {
     runGame ();
     event.preventDefault();
@@ -178,7 +179,7 @@ function runGame () {
     $("#thanks").html("Game Over! Thank you for playing!")
     $("#triviaQuestions").empty();
     $("#triviaQuestions2").empty();
-    $("#timer").empty();
+    $("#timer").hide();
     var playDiv=$("#play-again")
     var playButton=$("<button class='click'>" + "Play Again" + "</button>")
     playDiv.html(playButton)
@@ -187,26 +188,35 @@ function runGame () {
 
     $(document).on("click", '.click', function () {
     $(this).hide();
+    $("#timer").show();
+    $("#thanks").empty();
+   
+    
+    // $("#start").show();
+    // $("#start").click(startGame);
     count=0;
     correctAnswers=0;
     incorrectAnswers=0;
-    number=10;
-    $("#correct").text("Number Correct: ")
+     $("#correct").text("Number Correct: ")
     $("#incorrect").text("Number Incorrect: ")
-    // showTrivia = setInterval(decrement, 10000);
-    // function decrement() {
-    // number--;
-    // $("#timer").html("Time Left: " + number);
-    // if (number===0) {
-    //     stop2()
-    // }
-    // }
-    if (count===questions.length) {
-        stop ();
-        console.log(count)
-        console.log(questions.length)
-  }
+    number=10;
     runGame();
+    // $("#correct").text("Number Correct: ")
+    // $("#incorrect").text("Number Incorrect: ")
+//     // showTrivia = setInterval(decrement, 10000);
+//     // function decrement() {
+//     // number--;
+//     // $("#timer").html("Time Left: " + number);
+//     // if (number===0) {
+//     //     stop2()
+//     // }
+//     // }
+//     if (count===questions.length) {
+//         stop ();
+//         console.log(count)
+//         console.log(questions.length)
+//   }
+//     runGame();
 })
    
   
