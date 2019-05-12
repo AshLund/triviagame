@@ -134,13 +134,11 @@ $("#triviaQuestions2").on("click", function (event) {
         console.log(questions.length)
     }
     clearInterval(showTrivia);
-    showTrivia = setInterval(decrement, 10000);
+    
     number=10;
-    function decrement() {
-    number--;
+    
     if (number===0) {
         stop2();
-    }
     }
 })
 function displayAnswers() {
@@ -190,10 +188,7 @@ function runGame () {
     $(this).hide();
     $("#timer").show();
     $("#thanks").empty();
-   
-    
-    // $("#start").show();
-    // $("#start").click(startGame);
+
     count=0;
     correctAnswers=0;
     incorrectAnswers=0;
@@ -201,22 +196,7 @@ function runGame () {
     $("#incorrect").text("Number Incorrect: ")
     number=10;
     runGame();
-    // $("#correct").text("Number Correct: ")
-    // $("#incorrect").text("Number Incorrect: ")
-//     // showTrivia = setInterval(decrement, 10000);
-//     // function decrement() {
-//     // number--;
-//     // $("#timer").html("Time Left: " + number);
-//     // if (number===0) {
-//     //     stop2()
-//     // }
-//     // }
-//     if (count===questions.length) {
-//         stop ();
-//         console.log(count)
-//         console.log(questions.length)
-//   }
-//     runGame();
+
 })
    
   
