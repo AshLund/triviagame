@@ -58,6 +58,7 @@ function decrement() {
 number--;
 $("#timer").html("Time Left: " + number);
 if (number===0) {
+clearInterval(showTrivia)
 stop2()
 }
 }
@@ -126,11 +127,13 @@ console.log(count)
 console.log(questions.length)
 }
 if (number===0) {
+clearInterval(showTrivia)
 stop2();
 }
 }
 
 function stop () {
+clearInterval(showTrivia)
 $("#thanks").html("Game Over! Thank you for playing!")
 $("#triviaQuestions").empty();
 $("#triviaQuestions2").empty();
