@@ -1,4 +1,3 @@
-
 //declare variables
 var correctAnswers=0;
 var incorrectAnswers=0;
@@ -46,6 +45,7 @@ question: "Which wife is Henry VIII buried next to?",
 var count=0;
 var plus=count + 1
 var showTrivia=""
+var showTrivia2=""
 var number=10;
 
 $("#start").click(startGame);
@@ -58,7 +58,6 @@ function decrement() {
 number--;
 $("#timer").html("Time Left: " + number);
 if (number===0) {
-clearInterval(showTrivia)
 stop2()
 }
 }
@@ -91,7 +90,6 @@ stop ();
 console.log(count)
 console.log(questions.length)
 }
-clearInterval(showTrivia);
 
 number=10;
 
@@ -116,7 +114,7 @@ console.log(newAnswerDiv)
 triviaDiv.html(newAnswerDiv);
 }
 function runGame () {
-showTrivia = setInterval(10000);
+showTrivia2 = setInterval(10000);
 console.log(setInterval)
 displayQuestion();
 displayAnswers();
@@ -127,7 +125,7 @@ console.log(count)
 console.log(questions.length)
 }
 if (number===0) {
-clearInterval(showTrivia)
+// clearInterval(showTrivia)
 stop2();
 }
 }
@@ -155,13 +153,21 @@ incorrectAnswers=0;
 $("#correct").text("Number Correct: ")
 $("#incorrect").text("Number Incorrect: ")
 number=10;
+showTrivia = setInterval(decrement, 1000);
+function decrement() {
+number--;
+$("#timer").html("Time Left: " + number);
+if (number===0) {
+stop2()
+}
+}
 runGame();
 
 })
 
 
 function stop2 () {
-clearInterval(showTrivia)
+// clearInterval(showTrivia)
 incorrectAnswers=incorrectAnswers+1;
 $("#incorrect").html("Number Incorrect: " + + incorrectAnswers)
 displayQuestion();
@@ -170,10 +176,9 @@ number=10;
 count++;
 if (count===questions.length) {
 stop ();
-clearInterval(showTrivia)
+// clearInterval(showTrivia)
 console.log(count)
 console.log(questions.length)
 }
 
 }
-
