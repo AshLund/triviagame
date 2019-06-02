@@ -97,3 +97,23 @@ footer {
 #footer {
     display: inline-block;
 }
+@media only screen and (max-width: 980px) {
+    hr {
+        display: none;
+    }
+
+@media only screen and (max-width: 768px) {  
+    #bottomline {
+        display: none;
+    }
+
+
+@media only screen and (max-width: 640px) {  
+    img {
+        display: none;
+    }
+
+
+
+
+
