@@ -27,17 +27,17 @@ var questions = [
     correct: "Arthur",
 },
 {
-question: "Who was Henry VIII's first wife?",
+    question: "Who was Henry VIII's first wife?",
     answers: ["Anne Boleyn", "Jane Seymour", "Catherine of Aragon", "Catherine Howard", ],
     correct: "Catherine of Aragon",
 },
 {
-question: "What happened to  Henry VIII's wife Anne Boleyn?",
+    question: "What happened to  Henry VIII's wife Anne Boleyn?",
     answers: ["Widowed", "Beheaded", "Divorced", "Died of Natural Causes",],
     correct: "Beheaded",
 },
 {
-question: "Which wife is Henry VIII buried next to?",
+    question: "Which wife is Henry VIII buried next to?",
     answers: ["Anne Boleyn", "Jane Seymour", "Catherine of Aragon", "Anne of Cleves", ],
     correct: "Jane Seymour",
 },
@@ -85,7 +85,7 @@ $("#correct").html("Number Correct: "+  + correctAnswers)
 incorrectAnswers=incorrectAnswers+1;
 $("#incorrect").html("Number Incorrect: " + + incorrectAnswers)
 
-if (count===questions.length) {
+if (count===8) {
 stop ();
 console.log(count)
 console.log(questions.length)
