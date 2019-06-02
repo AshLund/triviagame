@@ -58,7 +58,7 @@ function decrement() {
 number--;
 $("#timer").html("Time Left: " + number);
 if (number===0) {
-stop2()
+questionTimeout()
 }
 }
 if (count===questions.length) {
@@ -94,7 +94,7 @@ console.log(questions.length)
 number=10;
 
 if (number===0) {
-stop2();
+questionTimeout();
 }
 })
 function displayAnswers() {
@@ -126,7 +126,7 @@ console.log(questions.length)
 }
 if (number===0) {
 // clearInterval(showTrivia)
-stop2();
+questionTimeout();
 }
 }
 
@@ -158,7 +158,7 @@ function decrement() {
 number--;
 $("#timer").html("Time Left: " + number);
 if (number===0) {
-stop2()
+questionTimeout()
 }
 }
 runGame();
@@ -166,7 +166,7 @@ runGame();
 })
 
 
-function stop2 () {
+function questionTimeout () {
 // clearInterval(showTrivia)
 incorrectAnswers=incorrectAnswers+1;
 $("#incorrect").html("Number Incorrect: " + + incorrectAnswers)
